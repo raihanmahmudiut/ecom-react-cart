@@ -1,19 +1,22 @@
 import React from "react";
 import { PRODUCTS } from "../../products";
 import { Product } from "./product";
-import "./shop.css";
+
+import { Card, Button, Form, Row, Col } from "react-bootstrap";
 
 export const Shop = () => {
 	return (
-		<div className="shop">
-			<div className="shopTitle">
+		<>
+			<div align="center" className="shopTitle">
 				<h1>Tech Shop</h1>
 			</div>
-			<div className="products">
+			<Row xs={1} md={3} className="g-4">
 				{PRODUCTS.map((product) => (
-					<Product data={product} />
+					<Col align="center" key={product}>
+						<Product data={product} />
+					</Col>
 				))}
-			</div>
-		</div>
+			</Row>
+		</>
 	);
 };
